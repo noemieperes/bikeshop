@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap" rel="stylesheet">
+  <title>BikeShop - Basket</title>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <!-- HEADER -->
+    <div class="row">
+      <nav class=" header col-12 navbar navbar-light bg-dark">
+        <a class="navbar" href="/">
+          <img src="/images/bike-logo.svg" width="50" height="50" class="logo" alt="">
+          The Bike Shop Experience
+        </a>
+        <a href="/login">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Log-out</button>
+      </a>
+      </nav>
+    </div>
+
+    <div class="row">
+      <div class="col-12 mt-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Shop</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Basket</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <h1>Basket</h1>
+    </div>
+
+    <div class="row col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Picture</th>
+            <th scope="col">Model</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+            <th scope="col">Suppr</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i< dataCardBike.length; i++) { %>
+            <tr>
+              <td><img src="/images/<%= dataCardBike[i].images%>.jpg" class="img-fluid" alt=""> </td>
+              <td>
+                <%= dataCardBike[i].title%>
+              </td>
+              <td>
+                <%= dataCardBike[i].quantity%>
+              </td>
+              <td>
+                <%= dataCardBike[i].price%> €
+              </td>
+              <td>
+                <%=dataCardBike[i].price * dataCardBike[i].quantity%> €
+              </td>
+              <td><button type="button" class="btn btn-outline-info btn-sm" src="/images/trash.svg" name="trash"><img src="/images/trash.svg" alt=""> </button></td>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="total-box row">
+      <div class="col-5 col-sm-10" style="text-align: end;">Total basket:</div>
+      <div class="col-5 col-sm-2">
+        <%=totalCmd%>€
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

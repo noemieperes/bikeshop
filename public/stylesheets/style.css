@@ -8,7 +8,7 @@ body{
 /* ---------- Home page -------------- */
 
 .jumbotron {
-    background-image: url('bike-background.jpg');
+    background-image: url('/images/bike-background.jpg');
     background-size: cover;
     background-position: center;
     height: 150px;
@@ -58,6 +58,9 @@ body{
 
 .total-box {
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 
 }
 
@@ -65,5 +68,7 @@ body{
     font-weight: bold;
 }
 
-
+.img-fluid {
+    width: 100px;
+}
 
